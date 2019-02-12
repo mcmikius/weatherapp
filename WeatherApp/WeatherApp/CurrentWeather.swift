@@ -23,7 +23,7 @@ extension CurrentWeather {
     }
     
     var humidityString: String {
-        return "\(Int(humidity)) %"
+        return "\(Int(humidity))%"
     }
     
     var temperatureString: String {
