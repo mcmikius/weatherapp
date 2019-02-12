@@ -23,7 +23,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let currentWeather = CurrentWeather
+        let icon = WeatherIconManager.Rain.image
+        let currentWeather = CurrentWeather(temperature: 10.0, appearentTemperature: 5.0, humidity: 30, pressure: 250, weatherIcon: icon)
+        updateUIWith(currentWeather: currentWeather)
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,9 +33,12 @@ class ViewController: UIViewController {
     }
     
     func updateUIWith(currentWeather: CurrentWeather) {
-        
+        self.imageView.image = currentWeather.weatherIcon
+        self.pressureLabel.text = currentWeather.pressureString
+        self.temperatureLabel.text = currentWeather.temperatureString
+        self.appearentTemperatureLabel.text = currentWeather.appearentTemperatureString
+        self.humidityLabel.text = currentWeather.humidityString
     }
-
-
 }
+
 
