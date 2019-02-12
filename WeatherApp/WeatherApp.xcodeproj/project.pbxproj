@@ -15,6 +15,7 @@
 		FB7170F12212AFBA005A2C98 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7170F02212AFBA005A2C98 /* CurrentWeather.swift */; };
 		FB7170F32212B073005A2C98 /* WeatherIconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7170F22212B073005A2C98 /* WeatherIconManager.swift */; };
 		FB7170F52212BC95005A2C98 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7170F42212BC95005A2C98 /* APIManager.swift */; };
+		FB7170F72212C92A005A2C98 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7170F62212C92A005A2C98 /* ErrorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FB7170F02212AFBA005A2C98 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		FB7170F22212B073005A2C98 /* WeatherIconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconManager.swift; sourceTree = "<group>"; };
 		FB7170F42212BC95005A2C98 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		FB7170F62212C92A005A2C98 /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +64,8 @@
 			children = (
 				FB7170DE2212A204005A2C98 /* AppDelegate.swift */,
 				FB7170F42212BC95005A2C98 /* APIManager.swift */,
-				FB7170F02212AFBA005A2C98 /* CurrentWeather.swift */,
-				FB7170F22212B073005A2C98 /* WeatherIconManager.swift */,
+				FB7170F62212C92A005A2C98 /* ErrorManager.swift */,
+				FB7170F82212C93B005A2C98 /* WeatherModel */,
 				FB7170E02212A204005A2C98 /* ViewController.swift */,
 				FB7170E22212A204005A2C98 /* Main.storyboard */,
 				FB7170E52212A205005A2C98 /* Assets.xcassets */,
@@ -71,6 +73,15 @@
 				FB7170EA2212A205005A2C98 /* Info.plist */,
 			);
 			path = WeatherApp;
+			sourceTree = "<group>";
+		};
+		FB7170F82212C93B005A2C98 /* WeatherModel */ = {
+			isa = PBXGroup;
+			children = (
+				FB7170F02212AFBA005A2C98 /* CurrentWeather.swift */,
+				FB7170F22212B073005A2C98 /* WeatherIconManager.swift */,
+			);
+			path = WeatherModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB7170F72212C92A005A2C98 /* ErrorManager.swift in Sources */,
 				FB7170E12212A204005A2C98 /* ViewController.swift in Sources */,
 				FB7170F12212AFBA005A2C98 /* CurrentWeather.swift in Sources */,
 				FB7170F52212BC95005A2C98 /* APIManager.swift in Sources */,
