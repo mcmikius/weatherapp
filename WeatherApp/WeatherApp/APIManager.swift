@@ -21,9 +21,7 @@ protocol APIManager {
     var session: URLSession { get }
     
     func JSONTaskWith(request: URLRequest, completionHandler: JSONCompletionHandler) -> JSONTask
-    func fetch<T>(request: URLRequest, parse: ([String: AnyObject]) -> T?, completionHandler: (APIResult<T>) -> Void)
-    
-    init(sessionConfiguration: URLSessionConfiguration)
+    func fetch<T>(request: URLRequest, parse: @escaping ([String: AnyObject]) -> T?, completionHandler: (APIResult<T>) -> Void)
 }
 
 extension APIManager {

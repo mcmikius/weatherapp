@@ -16,6 +16,7 @@
 		FB7170F32212B073005A2C98 /* WeatherIconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7170F22212B073005A2C98 /* WeatherIconManager.swift */; };
 		FB7170F52212BC95005A2C98 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7170F42212BC95005A2C98 /* APIManager.swift */; };
 		FB7170F72212C92A005A2C98 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7170F62212C92A005A2C98 /* ErrorManager.swift */; };
+		FB7170FA2212CE4E005A2C98 /* APIWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7170F92212CE4E005A2C98 /* APIWeatherManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FB7170F22212B073005A2C98 /* WeatherIconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconManager.swift; sourceTree = "<group>"; };
 		FB7170F42212BC95005A2C98 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		FB7170F62212C92A005A2C98 /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		FB7170F92212CE4E005A2C98 /* APIWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWeatherManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				FB7170E52212A205005A2C98 /* Assets.xcassets */,
 				FB7170E72212A205005A2C98 /* LaunchScreen.storyboard */,
 				FB7170EA2212A205005A2C98 /* Info.plist */,
+				FB7170F92212CE4E005A2C98 /* APIWeatherManager.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				FB7170E12212A204005A2C98 /* ViewController.swift in Sources */,
 				FB7170F12212AFBA005A2C98 /* CurrentWeather.swift in Sources */,
 				FB7170F52212BC95005A2C98 /* APIManager.swift in Sources */,
+				FB7170FA2212CE4E005A2C98 /* APIWeatherManager.swift in Sources */,
 				FB7170DF2212A204005A2C98 /* AppDelegate.swift in Sources */,
 				FB7170F32212B073005A2C98 /* WeatherIconManager.swift in Sources */,
 			);
