@@ -24,19 +24,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let icon = WeatherIconManager.Rain.image
-        let currentWeather = CurrentWeather(temperature: 10.0, appearentTemperature: 5.0, humidity: 30, pressure: 250, weatherIcon: icon)
+        let currentWeather = CurrentWeather(temperature: 10.0, appearentTemperature: 5.0, humidity: 30, pressure: 750, weatherIcon: icon)
         updateUIWith(currentWeather: currentWeather)
         
-        //let urlString = "https://api.darksky.net/forecast/e3809a6381a9d4a83bd1cf015f8c3034/37.8267,-122.4233"
-        let baseURL = URL(string: "https://api.darksky.net/forecast/e3809a6381a9d4a83bd1cf015f8c3034/")
-        let fullURL = URL(string: "37.8267,-122.4233", relativeTo: baseURL)
-        let sessionConfiguration = URLSessionConfiguration.default
-        let session = URLSession(configuration: sessionConfiguration)
-        let request = URLRequest(url: fullURL!)
-        let dataTask = session.dataTask(with: fullURL!) { (data, response, error) in
-            
-        }
-        dataTask.resume()
+//        let urlString = "https://api.darksky.net/forecast/e3809a6381a9d4a83bd1cf015f8c3034/37.8267,-122.4233"
+//        let baseURL = URL(string: "https://api.darksky.net/forecast/e3809a6381a9d4a83bd1cf015f8c3034/")
+//        let fullURL = URL(string: "37.8267,-122.4233", relativeTo: baseURL)
+//        let sessionConfiguration = URLSessionConfiguration.default
+//        let session = URLSession(configuration: sessionConfiguration)
+//        let request = URLRequest(url: fullURL!)
+//        let dataTask = session.dataTask(with: fullURL!) { (data, response, error) in
+//
+//        }
+//        dataTask.resume()
     }
     
     override func didReceiveMemoryWarning() {
