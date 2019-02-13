@@ -11,6 +11,16 @@ import Foundation
 typealias JSONTask = URLSessionDataTask
 typealias JSONCompletionHandler = ([String: AnyObject]?, HTTPURLResponse?, Error?) -> Void
 
+protocol JSONDecodable {
+    init?(JSON: [String: AnyObject])
+}
+
+protocol FinalURLPoint {
+    var baseURL: URL { get }
+    var path: String { get }
+    var request: URLRequest { get }
+}
+
 enum APIResult<T> {
     case Success(T)
     case Failure(Error)
@@ -20,8 +30,8 @@ protocol APIManager {
     var sessionConfiguration: URLSessionConfiguration { get }
     var session: URLSession { get }
     
-    func JSONTaskWith(request: URLRequest, completionHandler: JSONCompletionHandler) -> JSONTask
-    func fetch<T>(request: URLRequest, parse: @escaping ([String: AnyObject]) -> T?, completionHandler: (APIResult<T>) -> Void)
+    func JSONTaskWith(request: URLRequest, completionHandler: @escaping JSONCompletionHandler) -> JSONTask
+    func fetch<T: JSONDecodable>(request: URLRequest, parse: @escaping ([String: AnyObject]) -> T?, completionHandler: @escaping (APIResult<T>) -> Void)
 }
 
 extension APIManager {
@@ -55,19 +65,21 @@ extension APIManager {
         }
         return dataTask
     }
-    func fetch<T>(request: URLRequest, parse: ([String: AnyObject]) -> T?, completionHandler: (APIResult<T>) -> Void) {
+    func fetch<T>(request: URLRequest, parse: @escaping ([String: AnyObject]) -> T?, completionHandler: @escaping (APIResult<T>) -> Void) {
         let dataTask = JSONTaskWith(request: request) { (json, response, error) in
-            guard let json = json else {
-                if let error = error {
+            DispatchQueue.main.async {
+                guard let json = json else {
+                    if let error = error {
+                        completionHandler(.Failure(error))
+                    }
+                    return
+                }
+                if let value = parse(json) {
+                    completionHandler(.Success(value))
+                } else {
+                    let error = NSError(domain: MCNetworkingErrorDomain, code: 200, userInfo: nil)
                     completionHandler(.Failure(error))
                 }
-                return
-            }
-            if let value = parse(json) {
-                completionHandler(.Success(value))
-            } else {
-                let error = NSError(domain: MCNetworkingErrorDomain, code: 200, userInfo: nil)
-                completionHandler(.Failure(error))
             }
         }
         dataTask.resume()
