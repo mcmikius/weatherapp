@@ -50,6 +50,6 @@ extension CurrentWeather {
     }
     
     var apparentTemperatureString: String {
-        return "\(Int(5 / 9 * apparentTemperature - 32))˚C"
+        return "\(Int(5 / 9 * (apparentTemperature - 32)))˚C"
     }
 }
